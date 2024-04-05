@@ -66,7 +66,7 @@ Use the following command to start the fine-tuning process on your CPUs. I am pu
 It could several days or even a couple of weeks depending on how many CPUs you have.
 
 ```
-nohup ../build/bin/finetune --model-base llama-2-13b-chat.Q5_K_M.gguf --lora-out lora.bin --train-data train.txt --sample-start '<SFT>' --adam-iter 1024 &
+nohup ../build/bin/finetune --model-base llama-2-13b-chat.Q5_K_M.gguf --ctx 512 --lora-out lora.bin --train-data train.txt --sample-start '<SFT>' --adam-iter 1024 &
 ```
 
 You can check the process every a few hours in the `nohup.out` file. It will report `loss` for each iteration. You can stop the process when the `loss` goes consistently under `0.1`.
